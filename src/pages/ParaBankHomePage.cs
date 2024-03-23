@@ -3,13 +3,13 @@ using OpenQA.Selenium;
 
 namespace src.pages
 {
-    public class HomePage
+    public class ParaBankHomePage
     {
 
         private IWebDriver driver;
 
 
-        public HomePage(IWebDriver driver)
+        public ParaBankHomePage(IWebDriver driver)
         {
             this.driver = driver;
         }
@@ -17,18 +17,11 @@ namespace src.pages
         // register link
         private By registerLinkLocator = By.CssSelector("div[id='loginPanel'] > p:nth-of-type(2) > a");
 
-        public HomePage clickRegisterLink()
+        public ParaBankHomePage clickRegisterLink()
         {
             IWebElement registerLink = driver.FindElement(registerLinkLocator);
             registerLink.Click();
             return this;
         }
-
-
-        public HomePage openBrowser()
-        {
-            return this;
-        }
-
     }
 }

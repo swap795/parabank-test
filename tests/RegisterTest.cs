@@ -26,45 +26,16 @@ namespace tests
             6. assert that registration is done
         */
 
-
-        public void openBrowser(string browserName)
-        {
-            switch (browserName)
-            {
-                case "chrome":
-                    driver = new ChromeDriver();
-                    break;
-
-                case "firefox":
-                    driver = new FirefoxDriver();
-                    break;
-
-                case "safari":
-                    driver = new SafariDriver();
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
-
         //Name("Register an Account Test"), Description("Try clicking on the register link")
         [Test]
         public void registerAccountTest()
         {
             string URL = "https://parabank.parasoft.com/parabank/index.htm";
 
-
-            // open specific browser
-            // chrome
-            // firefox
-            // safari
-
             GoTo(driver, URL);
 
-            HomePage homePage = new HomePage(driver);
-            homePage.clickRegisterLink();
+            ParaBankHomePage parabankHomePage = new ParaBankHomePage(driver);
+            parabankHomePage.clickRegisterLink();
 
             Console.WriteLine("hello");
         }
